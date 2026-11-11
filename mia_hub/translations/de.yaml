@@ -1,0 +1,10 @@
+configuration:
+  pairing_code:
+    name: Kopplungscode
+    description: Einmalcode aus MIA (Zuhause → Hub koppeln). Nach dem Koppeln wird er nicht mehr gebraucht.
+  api_url:
+    name: Adresse von MIA
+    description: Basisadresse der API, ohne /v1.
+  device_id:
+    name: Gerätename
+    description: Name des Hubs in MIA (Buchstaben, Ziffern, Punkt, Bindestrich, Unterstrich).

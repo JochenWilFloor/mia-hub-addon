@@ -1,0 +1,30 @@
+# Home-Assistant-Add-on des MIA-Hubs (#1179, MDD 8 und 11). Das Image baut und signiert die CI
+# (Job „Hub-Image“ in .github/workflows/ci.yml) für aarch64 (Raspberry Pi 5) und amd64; der
+# Supervisor lädt `image:version`. Nur ausgehende Verbindungen (Kopplung über HTTPS, NATS-Leaf mit
+# mTLS), keine Ports im Heimnetz. Home Assistant über die Supervisor-API, kein langlebiges Token.
+name: MIA Hub
+version: "0.10.0"
+slug: mia_hub
+description: Verbindet Home Assistant mit MIA – nur ausgehend, nur was du bestätigst.
+arch:
+  - aarch64
+  - amd64
+image: ghcr.io/jochenwilfloor/mia-hub
+init: false
+startup: application
+boot: auto
+# Watchdog (#1557): Der Supervisor startet das Add-on neu, wenn der Prozess endet oder
+# /health nicht 200 liefert. Prüfung im internen Netz des Add-ons, keine Ports im Heimnetz.
+watchdog: http://[HOST]:[PORT:8099]/health
+homeassistant_api: true
+# Audio für den Lautsprecher (ADR-0026): nur der Medienordner, darin der Unterordner mia/
+map:
+  - media:rw
+options:
+  pairing_code: ""
+  api_url: https://staging.mia.ixsell.de/api
+  device_id: hub-pi5
+schema:
+  pairing_code: match(^([A-HJ-NP-Z2-9]{8})?$)
+  api_url: url
+  device_id: match(^[A-Za-z0-9._-]{1,128}$)

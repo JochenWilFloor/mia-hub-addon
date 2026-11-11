@@ -1,0 +1,5 @@
+# Add-on-Sammlung des MIA-Hubs (#1179). Veröffentlicht als öffentliches Add-on-Repository
+# https://github.com/JochenWilFloor/mia-hub-addon (#2023, CI: infra/ci/addon-publish.sh); Quelle der
+# Wahrheit bleibt hub/addon/ in MIA. Installation: mia_hub/DOCS.md.
+name: MIA Hub
+maintainer: Samplix GmbH
