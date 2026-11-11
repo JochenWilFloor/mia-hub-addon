@@ -85,3 +85,10 @@ die in MIA **eingeschaltet** sind (Menü → Peripherie → Geräte). Neu erkann
 - MIA nutzt das nur, um das Aufwachen zu erkennen und das Briefing vorzubereiten. Gesprochen wird
   es erst, wenn ein Signal von dir dazukommt, zum Beispiel deine erste Nutzung von MIA.
 - Ohne Einwilligung „Zuhause“ meldet der Hub nichts.
+
+## Gerätenamen wie in Home Assistant (ab 0.11.0)
+
+- Geräte heißen in MIA so wie in Home Assistant, mit dem Namen des Geräts, zum Beispiel
+  „Kamera Garten Bewegung erkannt“ statt nur „Bewegung erkannt“.
+- Einträge der Integration `browser_mod` (Browserfenster) sind keine Geräte im Haus. Sie erscheinen
+  in MIA nicht mehr als Bewegungsmelder oder Lautsprecher und verlassen den Hub nicht.
