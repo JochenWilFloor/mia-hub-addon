@@ -92,3 +92,17 @@ die in MIA **eingeschaltet** sind (Menü → Peripherie → Geräte). Neu erkann
   „Kamera Garten Bewegung erkannt“ statt nur „Bewegung erkannt“.
 - Einträge der Integration `browser_mod` (Browserfenster) sind keine Geräte im Haus. Sie erscheinen
   in MIA nicht mehr als Bewegungsmelder oder Lautsprecher und verlassen den Hub nicht.
+
+## Schritte und WLAN fürs Aufwachen (ab 0.12.0)
+
+Ohne Bewegungsmelder und wenn das iPhone wegen einer Ladegrenze kein „Laden beendet“ meldet, hilft
+dein iPhone auf zwei weiteren Wegen, das Aufwachen zu erkennen. Voraussetzung: Es ist dir zugeordnet
+und für „Aufwachen“ freigegeben.
+
+- **Schritte:** Der Hub meldet nur „Schritte gestiegen“, wenn binnen 5 Minuten mindestens 50 neue
+  Schritte dazukommen, höchstens einmal pro Minute. Die Schrittzahl verlässt den Hub nie.
+- **WLAN im Haus:** Wechselt dein iPhone zwischen zwei Zugangspunkten, die in MIA bekannt sind,
+  zählt das als Bewegung im Haus. Verlässt es das WLAN, zählt das nicht. Die Kennung des
+  Zugangspunkts verlässt den Hub nur verschlüsselt, wie bisher.
+- Ein einzelnes Signal (z. B. ein Gang ins Bad) weckt MIA nicht. Erst ein zweites binnen
+  10 Minuten zählt als Aufwachen.

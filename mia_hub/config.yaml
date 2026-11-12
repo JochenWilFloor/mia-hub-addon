@@ -3,7 +3,7 @@
 # Supervisor lädt `image:version`. Nur ausgehende Verbindungen (Kopplung über HTTPS, NATS-Leaf mit
 # mTLS), keine Ports im Heimnetz. Home Assistant über die Supervisor-API, kein langlebiges Token.
 name: MIA Hub
-version: "0.11.0"
+version: "0.12.0"
 slug: mia_hub
 description: Verbindet Home Assistant mit MIA – nur ausgehend, nur was du bestätigst.
 arch:
